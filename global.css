@@ -7,30 +7,84 @@ body {
     box-sizing: border-box;
     margin: auto;
     padding: 1em;
-  }
-
-html,
-body {
-  margin: 0;
-  padding: 5;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
 }
 
-#map {
-  width: 100%; /* Adjust width to your desired size */
-  height: 100%; /* Adjust height to your desired size */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for effect */
-  border-radius: 8px; /* Optional: rounded corners */
+header {
+    display: flex;
+    gap: 1em;
+    align-items: baseline;
 }
 
-#map svg {
-    position: absolute;
-    z-index: 1;
+h1 {
+    margin: 0px;
+}
+
+label {
+    margin-left: auto;
+
+    #selected-time {
+        display:block;
+    }
+    
+    #any-time {
+        display:block;
+        color: #777;
+        font-style: italic;
+    }
+}
+
+#time-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #ddd;
+    border-radius: 5px;
+    height: 8px;
     width: 100%;
-    height: 100%;
-    pointer-events: none;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+#time-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+#time-slider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+#time-slider:focus,
+#time-slider:active {
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#time-slider::-webkit-slider-thumb:focus,
+#time-slider::-webkit-slider-thumb:active {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#time-slider::-moz-range-thumb:focus,
+#time-slider::-moz-range-thumb:active {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#selected-time,
+#any-time {
+    font-style: italic;
+    margin-left: 5px;
+    color: #777;
 }
